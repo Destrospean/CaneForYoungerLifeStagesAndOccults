@@ -49,43 +49,43 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\mscorlib.dll</HintPath>
+      <HintPath>..\libs\mscorlib.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ScriptCore">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\ScriptCore.dll</HintPath>
+      <HintPath>..\libs\ScriptCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="SimIFace">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\SimIFace.dll</HintPath>
+      <HintPath>..\libs\SimIFace.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplayObjects">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\Sims3GameplayObjects.dll</HintPath>
+      <HintPath>..\libs\Sims3GameplayObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3GameplaySystems">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\Sims3GameplaySystems.dll</HintPath>
+      <HintPath>..\libs\Sims3GameplaySystems.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3MetaData">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\Sims3MetaData.dll</HintPath>
+      <HintPath>..\libs\Sims3MetaData.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sims3StoreObjects">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\Sims3StoreObjects.dll</HintPath>
+      <HintPath>..\libs\Sims3StoreObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\System.dll</HintPath>
+      <HintPath>..\libs\System.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\System.Xml.dll</HintPath>
+      <HintPath>..\libs\System.Xml.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UI">
-      <HintPath>..\..\..\..\..\..\The Sims 3 Dependencies\UI.dll</HintPath>
+      <HintPath>..\libs\UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
