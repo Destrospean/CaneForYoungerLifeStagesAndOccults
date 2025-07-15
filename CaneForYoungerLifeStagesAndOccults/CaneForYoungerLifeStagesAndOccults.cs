@@ -156,7 +156,7 @@ namespace Destrospean
                     CaneWalkStyle = walkStyle;
                 }
 
-                public override void AddInteractions(InteractionObjectPair iop, Sim actor, Cane target, List<InteractionObjectPair> results)
+                public override void AddInteractions(InteractionObjectPair interaction, Sim actor, Cane target, List<InteractionObjectPair> results)
                 {
                     DefinitionModified definition = new DefinitionModified(Cane.kSouthernGentlemanCaneWalk);
                     results.Add(new InteractionObjectPair(definition, target));
@@ -283,7 +283,7 @@ namespace Destrospean
             [DoesntRequireTuning]
             public class DefinitionModified : ImmediateInteractionDefinition<Sim, Cane, UseCane>
             {
-                public override string GetInteractionName(Sim actor, Cane target, InteractionObjectPair iop)
+                public override string GetInteractionName(Sim actor, Cane target, InteractionObjectPair interaction)
                 {
                     if (target.UsingCane)
                     {
