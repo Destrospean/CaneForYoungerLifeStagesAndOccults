@@ -23,7 +23,7 @@ namespace Sims3.Gameplay.Destrospean
         public static bool kUsableForPlumbots;
 
         [Tunable]
-        public static bool kUsableForSimbots;
+        public static bool kUsableForSimBots;
 
         [Tunable]
         public static bool kUsableForVampires;

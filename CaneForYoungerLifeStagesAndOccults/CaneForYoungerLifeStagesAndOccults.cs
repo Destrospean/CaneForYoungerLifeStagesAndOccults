@@ -12,8 +12,9 @@ using Sims3.Gameplay.ThoughtBalloons;
 using Sims3.SimIFace;
 using Sims3.UI.Hud;
 using System.Collections.Generic;
-using static Destrospean.Common;
-using static Sims3.Gameplay.Destrospean.CaneForYoungerLifeStagesAndOccults;
+using Tuning = Sims3.Gameplay.Destrospean.CaneForYoungerLifeStagesAndOccults;
+using System;
+using Sims3.Gameplay.Utilities;
 
 namespace Destrospean
 {
@@ -346,25 +347,25 @@ namespace Destrospean
             switch (sim.OccultManager.CurrentOccultTypes)
             {
                 case OccultTypes.Mummy:
-                    if (!kUsableForMummies)
+                    if (!Tuning.kUsableForMummies)
                     {
                         return false;
                     }
                     break;
                 case OccultTypes.Frankenstein:
-                    if (!kUsableForSimbots)
+                    if (!Tuning.kUsableForSimBots)
                     {
                         return false;
                     }
                     break;
                 case OccultTypes.Vampire:
-                    if (!kUsableForVampires)
+                    if (!Tuning.kUsableForVampires)
                     {
                         return false;
                     }
                     break;
                 case OccultTypes.ImaginaryFriend:
-                    if (!kUsableForImaginaryFriends)
+                    if (!Tuning.kUsableForImaginaryFriends)
                     {
                         return false;
                     }
@@ -372,25 +373,38 @@ namespace Destrospean
                 case OccultTypes.Unicorn:
                     return false;
                 case OccultTypes.Genie:
-                    if (!kUsableForGenies)
+                    if (!Tuning.kUsableForGenies)
                     {
                         return false;
                     }
                     break;
                 case OccultTypes.Ghost:
-                    if (!kUsableForGhosts)
+                    if (!Tuning.kUsableForGhosts)
                     {
                         return false;
                     }
                     break;
                 case OccultTypes.Fairy:
-                    if (!kUsableForFairies)
+                    if (!Tuning.kUsableForFairies)
                     {
                         return false;
                     }
                     break;
             }
-            return !((sim.IsEP11Bot && !kUsableForPlumbots) || (sim.BuffManager.HasElement(BuffNames.Werewolf) && !kUsableInWerewolfForm) || (sim.BuffManager.HasAnyElement(BuffNames.Zombie, BuffNames.PermaZombie) && !kUsableForZombies) || ((sim.SimDescription.IsGhost || sim.SimDescription.DeathStyle != 0) && !kUsableForGhosts) || sim.IsPet);
+            return !((sim.IsEP11Bot && !Tuning.kUsableForPlumbots) || (sim.BuffManager.HasElement(BuffNames.Werewolf) && !Tuning.kUsableInWerewolfForm) || (sim.BuffManager.HasAnyElement(BuffNames.Zombie, BuffNames.PermaZombie) && !Tuning.kUsableForZombies) || ((sim.SimDescription.IsGhost || sim.SimDescription.DeathStyle != 0) && !Tuning.kUsableForGhosts) || sim.IsPet);
+        }
+
+        public static void CopyTuning(Type baseType, Type oldType, Type newType)
+        {
+            if (AutonomyTuning.GetTuning(newType.FullName, baseType.FullName) == null)
+            {
+                InteractionTuning tuning = AutonomyTuning.GetTuning(oldType, oldType.FullName, baseType);
+                if (tuning != null)
+                {
+                    AutonomyTuning.AddTuning(newType.FullName, baseType.FullName, tuning);
+                }
+            }
+            InteractionObjectPair.sTuningCache.Remove(new Pair<Type, Type>(newType, baseType));
         }
 
         static void OnPreLoad()
