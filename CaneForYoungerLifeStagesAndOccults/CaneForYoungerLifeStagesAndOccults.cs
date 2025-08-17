@@ -11,7 +11,6 @@ using Sims3.Gameplay.Pools;
 using Sims3.Gameplay.ThoughtBalloons;
 using Sims3.Gameplay.Utilities;
 using Sims3.SimIFace;
-using Sims3.UI.Hud;
 using System;
 using System.Collections.Generic;
 using Tuning = Sims3.Gameplay.Destrospean.CaneForYoungerLifeStagesAndOccults;
